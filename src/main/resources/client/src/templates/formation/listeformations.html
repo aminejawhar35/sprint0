@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-lg-12">
+        <rd-widget>
+            <rd-widget-header icon="fa-users" title="Formations">
+                <input type="text" placeholder="Search" class="form-control input-sm"/>
+            </rd-widget-header>
+            <rd-widget-body classes="medium no-padding">
+                <br/>
+                <button type="button" class="btn btn-primary" ui-sref="ajouterformation">Ajouter Formation</button>
+                <br/>
+                <br/>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="text-center">Code formation</th>
+                            <th>Nom de la formation</th>
+                            <th>Accréditation</th>
+                            <th>Niveau</th>
+                            <th>Supprimer</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr ng-repeat="f in formations">
+
+                            <td class="text-center"><a ui-sref="detailsformation({codeFormation:f.codeFormation})">{{f.codeFormation}}</a>
+                            </td>
+                            <td>{{f.nomFormation}}</td>
+                            <td>{{f.debutAccreditation}} ==> {{f.finAccreditation}}</td>
+                            <td>{{f.diplome}}</td>
+                            <td><a href="#" ng-click="supprimerFormation(f.codeFormation)"><i
+                                    class="fa fa-trash-o fa-4" aria-hidden="true"></i></a>
+                            </td>
+
+                        <tr/>
+                        </tbody>
+                    </table>
+                </div>
+            </rd-widget-body>
+            <rd-widget>
+    </div>
+</div>
